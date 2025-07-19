@@ -13,7 +13,8 @@
         "mailjet/laravel-mailjet": "^3.1",
         "spatie/browsershot": "^5.0",
         "symfony/http-client": "^7.2",
-        "symfony/mailgun-mailer": "^7.1"
+        "symfony/mailgun-mailer": "^7.1",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
