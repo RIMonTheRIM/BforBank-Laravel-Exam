@@ -1,0 +1,48 @@
+.demande-content-wrapper{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.demande-content{
+    margin-inline:1em ;
+    width: 50%;
+}
+.tableTitle{
+    color:#456882;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5em;
+}
+.tableTitle h1{
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    flex-grow: 1 ;
+}
+.btnSearch{
+    background-color: #456882;
+    color: #d2c1b6;
+    height: 100%;
+    margin: 0;
+
+    padding: 0.5em;
+    border: none;
+    transition: all 100ms;
+}
+.btnSearch svg{
+    height: 25px;
+}
+.btnSearch:hover{
+    background-color: #d2c1b6;
+    color: #456882;
+}
+.formDemande{
+    display: flex;
+}
+table{
+    width: 100%;
+}

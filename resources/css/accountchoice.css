@@ -1,0 +1,87 @@
+li{
+    list-style-type:none ;
+}
+.choiceSplitWrapper{
+    background-color: #F9F3EF;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.chocieSplitContent{
+    background-color: red;
+    display: flex;
+    flex-grow: 1;
+}
+.chocieSplitContent .btn{
+    background-color: #F9F3EF;
+    border: none;
+    color: #1b3c53;
+    font-size: 1.5em;
+}
+.chocieSplitContent .btn:hover{
+    background-color: #d2c1b6;
+    color: #2e678f;
+}
+.compteCourant{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color:#1b3c53;
+
+    border-right: 2px solid #F9F3EF;
+}
+.compteEpargne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color:#1b3c53;
+
+    border-left: 2px solid #F9F3EF;
+}
+.choiceSplit{
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    border-radius: 1em;
+    overflow: hidden;
+}
+.choiceTitle{
+    background-color:#1b3c53;
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    border-bottom: 4px solid #F9F3EF;
+    font-size: 3em;
+    color: #d2c1b6;
+}
+.compteChoiceTitle{
+    font-size: 3em;
+    background-color: #d2c1b6;
+    width: 100%;
+    text-align: center;
+    padding: 0.5em;
+    color: #1b3c53;
+}
+.infoList{
+    width: 100%;
+    height: 70%;
+    padding-inline: 3em;
+}
+.infoItem{
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    padding-block: 1em;
+    color: #d2c1b6;
+}
+.infoItem svg{
+    height: 25px;
+    width: 25px;
+    margin-inline: 1em;
+}

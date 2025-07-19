@@ -1,0 +1,40 @@
+.homeFlex{
+    height: 100%;
+    flex-grow: 1;
+    background-color: #F9F3EF;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+}
+.homeHeroWrapper{
+    background-color: #1b3c53;
+    color: #d2c1b6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    align-self: center;
+    border-radius: 1em;
+    gap: 1em;
+}
+.homeHeroWrapper .btn{
+    background-color: #F9F3EF;
+    border: none;
+    color: #1b3c53;
+    font-size: 1.5em;
+}
+.homeHeroWrapper .btn:hover{
+    background-color: #d2c1b6;
+    color: #2e678f;
+}
+.homeTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+}
+.homeTitle svg{
+
+}

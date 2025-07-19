@@ -1,0 +1,458 @@
+@font-face {
+    font-family: 'OCRA';
+    src: url('fonts/OCR-a___.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.transactions{
+    width: 100%;
+    border-radius: 1em;
+    background-color: white;
+}
+.transactionsCard{
+    font-size: 1.5em;
+    font-family: "Calibri", Roboto, Arial, sans-serif;
+    display: flex;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 1em;
+    padding: 0.55em;
+}
+.transactionsCard-logo{
+    box-sizing: border-box;
+    width: 10%;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.transactionsCard-solde{
+    width: 25%;
+}
+.transactionsCard-content{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.transactionsCard-solde{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.retraitLogo{
+     background-image: url("/resources/images/withdrawal.png");
+ }
+.depotLogo{
+    background-image: url("/resources/images/deposit.png");
+}
+.virementLogo{
+    background-image: url("/resources/images/transfer.png");
+}
+.feint{
+    color: #838383;
+}
+
+
+.dash-left-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    flex-grow: 1;
+}
+.dash-left-wrapper-header{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+ }
+.dash-left-wrapper-header h3{
+    color: #1B3C53;
+}
+
+.dash-right-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+}
+.dashcontent{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.soldeTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+
+}
+.rightFlex{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 1em;
+    gap:0.5em;
+    margin-bottom: 2em;
+}
+
+.infoSettings{
+    display: flex;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    border-radius: 100vw;
+    padding: 0;
+    background-color: transparent;
+    color: #F9F3EF;
+}
+.dropbtn svg{
+    height: 2.5em;
+}
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    color: #a19c99;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 160px;
+    z-index: 1;
+    height: 100%;
+    margin-right: 0.3em;
+    background-color: #F9F3EF;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #ff0000;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+   display: flex;
+}
+
+
+.soldeAffichage{
+    background-color: #D2C1B6;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    color:#1B3C53;
+    flex-grow: 1;
+    border: 3px solid #1B3C53;
+}
+.soldeAffichage b{
+    color: #112634;
+}
+.soldeSwitch{
+    font-size: 4em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.infoCompte{
+    font-size: 1.5em;
+    padding: 1em    ;
+}
+#balanceShow{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-size: contain;
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+.eye-open{
+    background-image: url("/resources/images/eye-open.png");
+}
+.eye-closed{
+    background-image: url("/resources/images/eye-closed.png");
+}
+.compteInfo{
+
+}
+.detailsInfo{
+    display: flex;
+    height: 100%;
+}
+
+/*CARTE BANCAIRE*/
+.cartebancaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*background-color: yellow;*/
+    width: 100%;
+    flex-grow: 1;
+    height: 45%;
+
+}
+
+.carteWrapper{
+}
+.carteWrapper:hover .contentCarte{
+    display: none;
+}
+.carteWrapper:hover .contentBackCarte{
+    display: flex;
+}
+.contentCarte{
+    width: 400px;
+    height: 252px;
+    border-radius: 2.5em;
+    background-image: url("/resources/images/credit.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    box-sizing: border-box;
+    font-family: "OCRA", monospace;
+    font-style: normal;
+}
+
+.contentBackCarte{
+    display: none;
+    width: 400px;
+    height: 252px;
+    border-radius: 2.5em;
+    background-image: url("/resources/images/flipCredit.png");
+    background-size: cover;
+    flex-direction: column;
+    margin: 1em;
+    box-sizing: border-box;
+    font-family: "OCRA", monospace;
+    font-style: normal;
+}
+.carteTop{
+    flex-grow: 1;
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}.carteLogo{
+     display: flex;
+     flex-grow: 1;
+     align-items: center;
+     font-size: 2em;
+     justify-content: flex-end;
+     padding-right: 1em;
+
+     font-weight: bold;
+     box-sizing: border-box;
+     background-image: url("/resources/images/BforBankLogo.png");
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position: right;
+ }
+.cartePuce{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    height: 3em;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    background-image: url("/resources/images/creditChip.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.carteBottom{
+    height: 75%;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 3em;
+}
+.carteNum{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    font-size: 2em;
+    color: #dcdcdc;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000, 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.carteDate{
+    display: flex;
+    flex-grow: 1;
+    font-size: 1em;
+    justify-content: flex-end;
+    color: #dcdcdc;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000, 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.carteNom{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    font-size: 1.5em;
+    justify-content: flex-start;
+    font-weight: bold;
+    color: #dcdcdc;
+    text-shadow: 2px 2px 0 #000, 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.carteOptions{
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    background-color: #1B3C53;
+    color: #F9F3EF;
+    padding: 0.5em;
+}
+.carteOptions h3{
+    padding: 0;
+    margin: 0;
+}
+
+
+.carteBackTop{
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 40%;
+}
+.carteStrip{
+    background-color: black;
+   height: 40px;
+    width: 100%;
+}
+.carteBackBottom{
+    padding: 1em 2em;
+    width: 100%;
+}
+.backInfo{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.carteCVV{
+    margin-inline: 1em;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carteChamp{
+    background-color: white;
+    height: 20px;
+    width: 70%;
+}
+.carteTitle{
+
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/*TABS*/
+.soldeOptions{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    background-color: #1B3C53;
+    color: white;
+}
+.soldeOptions .tab{
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-color: #e1eaff;
+}
+.soldeInput{
+
+    width: 100%;
+    height: 36px;
+    border-radius: 4px;
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid rgb(137, 151, 155);
+    transition: border-color 150ms ease-in-out 0s;
+    outline: none;
+    color: rgb(33, 49, 60);
+    background-color: rgb(255, 255, 255);
+    padding-right: 12px;
+}
+.soldeInput:hover{
+    box-shadow: rgb(231 238 236) 0px 0px 0px 3px;
+}
+.tabcontent{
+    box-sizing: border-box;
+    padding: 10px 50px;
+    display: none;
+    border-top: none;
+    /*background-color: #cc7373;*/
+}
+.depotTab.active{
+    background-color: green;
+}
+.retraitTab.active{
+    background-color:indianred ;
+}
+.virementTab.active{
+    background-color: #838320;
+}
+
+.btnCreate{
+    display: block;
+    background-color: #F9F3EF;
+    color: #456882;
+    height: 100%;
+    padding: 0.5em;
+    border: none;
+    transition: all 100ms;
+    text-decoration: none;
+    margin-top: 1em;
+    border-radius: 0.2em;
+}
+
+.btnCreate:hover{
+    background-color: #456882;
+    color: #F9F3EF;
+}
+
