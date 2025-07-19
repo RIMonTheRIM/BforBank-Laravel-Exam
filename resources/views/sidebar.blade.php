@@ -200,7 +200,6 @@
 
                             <a href="/gesDemandes" class="sidebarAdminOption" aria-expanded="true">
                                 Demandes
-                                {{--liste des comptes--}}
                             </a>
 
                             <a href="/gesComptes" class="sidebarAdminOption" aria-expanded="true">
@@ -241,6 +240,6 @@
             const dropdown = document.getElementById('userDropdownContent');
             dropdown.classList.toggle('toggled-hidden');
             dropdown.classList.toggle('toggled-flex');
-            console.log("switchingngngngng");
+            console.log("swit");
         }
     </script>
