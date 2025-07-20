@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-Route::get('/ping', fn() => 'pong');
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
 Route::redirect('/', '/login');
 Route::get('/email/verify', function () {
     return view('auth.verify');
