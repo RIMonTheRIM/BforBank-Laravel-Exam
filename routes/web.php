@@ -19,10 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', function () {
     return 'Laravel basic test works!';
 });
-// Test without middleware
-Route::get('/test-no-middleware', function () {
-    return 'No middleware test works!';
-})->withoutMiddleware();
+
 
 Auth::routes();
 Route::get('/health', function () {
