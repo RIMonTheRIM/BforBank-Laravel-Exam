@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Overpass:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+
+.app-wrapper{
+    display: flex;
+    background-color: #c9c4c1;
+    box-sizing: border-box;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+}
+
+#app{
+    height: 100vh;
+    box-sizing: border-box;
+    width: 100vw;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+
+
+
+
+
+/*stolen*/
+.b-example-divider {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.bi {
+    vertical-align: -.125em;
+    pointer-events: none;
+    fill: currentColor;
+}
+
+.dropdown-toggle { outline: 0; }
+
+.nav-flush .nav-link {
+    border-radius: 0;
+}
+
+.btn-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem .5rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .65);
+    background-color: transparent;
+    border: 0;
+}
+.btn-toggle:hover{
+    color: rgba(0, 0, 0, .85);
+    background-color: blue;
+}
+
+.btn-toggle:focus {
+    color: rgba(0, 0, 0, .85);
+    background-color: red;
+}
+
+.btn-toggle::before {
+    width: 1.25em;
+    line-height: 0;
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+    transition: transform .35s ease;
+    transform-origin: .5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"] {
+    color: rgba(0, 0, 0, .85);
+}
+.btn-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+    display: inline-flex;
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
+    text-decoration: none;
+}
+.btn-toggle-nav a:hover{
+    background-color:red;
+}
+.btn-toggle-nav a:focus {
+    background-color:red;
+}
+.scrollarea {
+    overflow-y: auto;
+}
+/*Styled Primitives*/
+/* CSS */
+.btnLink {
+    text-decoration: none;
+  align-items: center;
+    background-color: #456882;
+    color: #F9F3EF;
+    border-radius: 1em;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 1em;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.btnLink:hover {
+    background: #F6F9FE;
+    color: #174ea6;
+}
+
+.btnLink:active {
+    outline: none;
+}
+
+.btnLink:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+}
+
+
+
+.coolLink{
+    background-color: red;
+    color:  green;
+}
+
+
+
+
+/*DASHBOARD*/
+.transaction-content{
+    display: flex;
+    flex-direction: column;
+    /*background-color: green;*/
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.transaction-content .bigTitle{
+    /*background-color: blueviolet;*/
+    font-size: 3em;
+}
+.transaction-content form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color: blueviolet;*/
+}
+.left-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin: 1em;
+    /*background-color: #7272cc;*/
+    width: 50%;
+}
+
+.left-wrapper-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+table.tableDashboard {
+    font-size: 1em;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #cc7373;
+}
+table.tableDashboard td{
+    text-align: center;
+    vertical-align: middle;
+}
+.tableDashboard thead tr {
+    background-color: #1b3c53;
+    color: #d2c1b6;
+}
+
+.tableDashboard tbody tr:nth-child(even) {
+    background-color: #dbdfe7;
+}
+
+.tableDashboard tbody tr:nth-child(odd) {
+    background-color: #bacadc;
+}
+
+.tableDashboard th,
+.tableDashboard td {
+    padding: 12px 16px;
+    text-align: center;
+}
+.tabLink{
+    margin: 0;
+    text-decoration: none;
+}
+.tableId{
+    font-weight: bold;
+}
+.tableTypeGreen{
+    color: green;
+    font-weight: bold;
+}
+.tableTypeRed{
+    color: red;font-weight: bold;
+
+}
+.tableTypeOrange{
+    color: #d25202;font-weight: bold;
+}.neoNumber{
+    font-size: 1.2em;
+     font-family: "Share Tech Mono", monospace;
+     font-weight: bold;
+     font-style: normal;}
+.gestion-wrapper{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    /*background-color: #174ea6;*/
+}
+
+.gestion-wrapper .bigTitle{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 3em;
+}
+.gestionContainer{
+    background-color: green;
+}
+.right-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+}
+
+.solde{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.solde h3{
+    color: #1B3C53;
+}
+.form-control{
+    margin: 0;
+    padding: 0;
+}
+
+
+.downloadLink{
+    margin-left: auto;
+    margin-right: 1em;
+    color:#F9F3EF;
+}
+.downloadLink svg{
+    height: 2.5em;
+}
+.downloadLink:hover{
+    color: #a19c99;
+}
+.downloadLinkDark{
+    color:#1B3C53;
+}
+.downloadLinkDark svg{
+     height: 2.5em;
+ }
+.downloadLinkDark:hover{
+    color: #295b7e;
+}
+
+.smallTitle{
+    font-size: 1.5em;
+}
+
+
+
+
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    display: flex;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+
+
+/* Style the tab content */
+
+#depotForm{
+    display: block;
+}
+.errorText{
+
+    margin-inline:50px;
+}
+.tabsWrapper{
+    width: 100%;
+}
+
+
+
+
+.dashboardWrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.topBarOptions{
+    display: flex;
+    align-self: flex-end;
+}
+
+
+/* HERO */
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    flex-grow: 1;
+    margin: 3em;
+    box-sizing: border-box;
+    background-color: #cc7373;
+    border-radius: 1em;
+}
+.heroContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-grow: 1;
+
+    box-sizing: border-box;
+    background-color: #cc7373;
+}
+.heroHeader{
+    display: flex;
+    flex-direction: column;
+    background-color: #cc7373;
+    width: 100%;
+    padding: 1em;
+    margin: 0;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 1em;
+}
+.bigTitle{
+    font-family: "Playfair Display", serif;
+    font-size: 7em;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*background-color: pink;*/
+}
+.dashTitle{
+    font-size: 2.5em;
+}
+/* SPLIT ACCOUNT CHOICE */
+.split{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    margin: 3em;
+    box-sizing: border-box;
+    background-color: #cc7373;
+    border-radius: 1em;
+}
+.splitTitle{
+    font-size: 3em;
+    font-weight: 600;
+}
+.splitContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    margin: 3em;
+    box-sizing: border-box;
+    background-color: #883030;
+    border-radius: 1em;
+    width: 100%;
+}
+
+/*Login*/
+.pageContent{
+    box-sizing: border-box;
+    width: 100%;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+}
+.loginWrapper{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d2c1b6;
+    color: #1b3c53;
+    font-size: 1.25em;
+}
+.loginWrapper button{
+    background-color: #1b3c53;
+    border: none;
+    color: #F9F3EF;
+}
+.loginWrapper button:hover{
+    background-color: #F9F3EF;
+    color: #2e678f;
+}
+.loginWrapper a{
+    color: #2e678f;
+}
+.registerWrapper{
+    align-items: flex-end;
+    background-color: #d2c1b6;
+    color: #1b3c53;
+}
+.loginBackground{
+    background-image: url("/resources/images/loginBack.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.registerBackground{
+    background-image: url("/resources/images/registerBack.png");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: pink;
+    width: 50%;
+}
+.registerFormWrapper{
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    font-size: 1.2em;
+    font-weight: bold;
+    gap: 1em;
+}
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-family: Roboto, serif;
+}
+.submitButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.submitButton .btn{
+    width: 50%;
+    font-weight: bold;
+}
+.registerTitle{
+    font-family: "Gabarito", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 3em;
+    font-weight: 400;
+    font-style: normal;
+}
+.switchButton {
+    padding-top: 1em;
+    border-top: 1px solid black;
+}
+.green{
+    color: green;
+}
+.red{
+    color:  red;
+}
+.feint{
+    color: #838383;
+}
+
+.paginationWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-top: 1px black solid;
+}
+.paginationWrapper *{
+    margin: 0;
+}
+
+
+
+.paginationContainer{
+    width: 100%;
+    background-color: red;
+}
