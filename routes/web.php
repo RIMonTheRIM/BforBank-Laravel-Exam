@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/test', function () {
+    return 'Laravel basic test works!';
+});
+// Test without middleware
+Route::get('/test-no-middleware', function () {
+    return 'No middleware test works!';
+})->withoutMiddleware();
+
 Auth::routes();
 Route::get('/health', function () {
     return response()->json(['status' => 'ok']);
