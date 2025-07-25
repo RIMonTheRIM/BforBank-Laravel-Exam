@@ -88,7 +88,10 @@
             <div class="submitButton switchButton">
                 <a class="btn btn-link" href="{{ route('login') }}">Vous avez déjà un compte? Se connecter</a>
             </div>
-            <div class="registerBackground"></div>
+
+        </div>
+        <div class="registerBackground">
+
         </div>
     </div>
 </div>
