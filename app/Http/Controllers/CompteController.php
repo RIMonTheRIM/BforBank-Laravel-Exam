@@ -9,6 +9,7 @@ use App\Models\StatutCarte;
 use App\Models\Transaction;
 use App\Models\TypeCompte;
 use App\Models\TypeTransaction;
+use Barryvdh\DomPDF\Facade\Pdf;
 use DateTime;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -269,41 +270,51 @@ class CompteController extends Controller
             $dateCarte = $date->format('d/m');
         }
 
-        $html = view('pdf.carte-bancaire', [
-            'user' => $user,
+//        $html = view('pdf.carte-bancaire', [
+//            'user' => $user,
+//            'id' => $id,
+//            'compteUser' => $compteUser,
+//            'carteBancaire' => $carteBancaire,
+//            'numCarte' => $numCarte,
+//            'dateCarte' => $dateCarte],
+//
+//        )->render();
+////        $html = '<h1>Test PDF</h1>';
+////        return response()->streamDownload(function () use ($html) {
+////            echo Browsershot::html($html)
+////                ->format('A4')
+////                ->waitUntilNetworkIdle()
+////                ->pdf();
+////        }, 'carte-bancaire.pdf');
+//        Browsershot::html($html)
+//            ->setNodeBinary('/root/.nix-profile/bin/node')
+//            ->setNpmBinary('/root/.nix-profile/bin/npm')
+//            ->showBackground()
+//            ->save(storage_path('app/public/pdf/example.pdf'));
+//        return response()->download(storage_path('app/public/pdf/example.pdf'))->deleteFileAfterSend(true);
+        $pdf = Pdf::loadView('pdf.carte-bancaire', ['user' => $user,
             'id' => $id,
             'compteUser' => $compteUser,
             'carteBancaire' => $carteBancaire,
             'numCarte' => $numCarte,
-            'dateCarte' => $dateCarte],
-
-        )->render();
-//        $html = '<h1>Test PDF</h1>';
-//        return response()->streamDownload(function () use ($html) {
-//            echo Browsershot::html($html)
-//                ->format('A4')
-//                ->waitUntilNetworkIdle()
-//                ->pdf();
-//        }, 'carte-bancaire.pdf');
-        Browsershot::html($html)
-            ->setNodeBinary('/root/.nix-profile/bin/node')
-            ->setNpmBinary('/root/.nix-profile/bin/npm')
-            ->showBackground()
-            ->save(storage_path('app/public/pdf/example.pdf'));
-        return response()->download(storage_path('app/public/pdf/example.pdf'))->deleteFileAfterSend(true);
+            'dateCarte' => $dateCarte]);
+        return $pdf->download('cartebancaire.pdf');
     }
     public function pdfHisto($id)
     {
         $transactionsList = Transaction::where("comptebancaire_id",$id)->orderBy('created_at', 'desc')->get();
-        $html = view('pdf.historique', [
-            'transactionsList' => $transactionsList
-        ])->render();
-        Browsershot::html($html)
-            ->setNodeBinary('/root/.nix-profile/bin/node')
-            ->setNpmBinary('/root/.nix-profile/bin/npm')
-            ->showBackground()
-            ->save(storage_path('app/public/pdf/example.pdf'));
-        return response()->download(storage_path('app/public/pdf/example.pdf'))->deleteFileAfterSend(true);
+//        $html = view('pdf.historique', [
+//            'transactionsList' => $transactionsList
+//        ])->render();
+//        Browsershot::html($html)
+//            ->setNodeBinary('/root/.nix-profile/bin/node')
+//            ->setNpmBinary('/root/.nix-profile/bin/npm')
+//            ->showBackground()
+//            ->save(storage_path('app/public/pdf/example.pdf'));
+//        return response()->download(storage_path('app/public/pdf/example.pdf'))->deleteFileAfterSend(true);
+
+        $pdf = Pdf::loadView('pdf.historique', ['transactionsList' => $transactionsList]);
+        return $pdf->download('historique.pdf');
     }
     //HELPERS
     private function cryptSolde($solde)
