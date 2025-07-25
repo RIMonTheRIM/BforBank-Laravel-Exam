@@ -21,25 +21,53 @@ Route::get('/test', function () {
 });
 
 Route::get('/node-paths', function () {
-    $output = [];
+    $info = [];
 
-    // Check if binaries exist in common locations
-    $paths = ['/usr/bin/node', '/usr/local/bin/node', '/usr/bin/npm', '/usr/local/bin/npm'];
-    foreach ($paths as $path) {
-        $output[] = $path . ': ' . (file_exists($path) ? 'EXISTS' : 'NOT FOUND');
+    // Check additional common paths for Railpack/containerized environments
+    $nodePaths = [
+        '/usr/bin/node',
+        '/usr/local/bin/node',
+        '/opt/node/bin/node',
+        '/app/node_modules/.bin/node',
+        '/usr/local/nodejs/bin/node',
+        '/root/.nvm/versions/node/*/bin/node', // NVM paths
+    ];
+
+    $npmPaths = [
+        '/usr/bin/npm',
+        '/usr/local/bin/npm',
+        '/opt/node/bin/npm',
+        '/app/node_modules/.bin/npm',
+        '/usr/local/nodejs/bin/npm',
+        '/root/.nvm/versions/node/*/bin/npm',
+    ];
+
+    foreach ($nodePaths as $path) {
+        $globPaths = glob($path); // Handle wildcard paths
+        foreach ($globPaths as $realPath) {
+            $info['node_paths'][$realPath] = file_exists($realPath) && is_executable($realPath) ? 'EXISTS & EXECUTABLE' : 'Not found';
+        }
     }
 
-    // Try to find with which command
-    exec('which node 2>&1', $nodeWhich);
-    exec('which npm 2>&1', $npmWhich);
+    foreach ($npmPaths as $path) {
+        $globPaths = glob($path);
+        foreach ($globPaths as $realPath) {
+            $info['npm_paths'][$realPath] = file_exists($realPath) && is_executable($realPath) ? 'EXISTS & EXECUTABLE' : 'Not found';
+        }
+    }
 
-    $output[] = 'which node: ' . implode(', ', $nodeWhich);
-    $output[] = 'which npm: ' . implode(', ', $npmWhich);
+    // Try which command
+    exec('which node 2>/dev/null', $nodeOutput);
+    exec('which npm 2>/dev/null', $npmOutput);
 
-    // Check PATH
-    $output[] = 'PATH: ' . env('PATH');
+    $info['which_node'] = $nodeOutput[0] ?? 'Not found';
+    $info['which_npm'] = $npmOutput[0] ?? 'Not found';
 
-    return response()->json($output);
+    // Check if they're in PATH
+    exec('echo $PATH', $pathOutput);
+    $info['PATH'] = $pathOutput[0] ?? 'No PATH';
+
+    return response()->json($info, 200, [], JSON_PRETTY_PRINT);
 });
 Auth::routes();
 Route::get('/health', function () {
