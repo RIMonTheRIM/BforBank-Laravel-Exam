@@ -391,4 +391,26 @@ class CompteController extends Controller
         }
         return view('dashboard', compact('user', 'id', 'comptesActifs', 'compteUser', 'solde', 'transactionsList','carteBancaire','numCarte','dateCarte'));
     }
+//    public function pdfCarteShow($id)
+//    {
+//        $user = Auth::user();
+//        $compteUser = CompteBancaire::find($id);
+//        $carteBancaire = $compteUser->carteBancaire;
+//        $numCarte = null;
+//        if(isset($carteBancaire->numero_carte) and $carteBancaire->numero_carte!=null){
+//            $numCarte = trim(chunk_split($carteBancaire->numero_carte, 4, ' '));
+//        }
+//        $dateCarte = null;
+//        if(isset($carteBancaire->date_expiration) and $carteBancaire->date_expiration!=null){
+//            $date = new DateTime($carteBancaire->date_expiration);
+//            $dateCarte = $date->format('d/m');
+//        }
+//        return view("pdf.carte-bancaire", compact('user', 'id', 'compteUser','carteBancaire', 'numCarte', 'dateCarte'));
+//    }
+//    public function pdfHistoShow($id)
+//    {
+//        $transactionsList = Transaction::where("comptebancaire_id",$id)->orderBy('created_at', 'desc')->get();
+//
+//        return view("pdf.historique", compact('transactionsList'));
+//    }
 }

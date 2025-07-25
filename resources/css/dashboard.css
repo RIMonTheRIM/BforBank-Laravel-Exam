@@ -309,7 +309,7 @@
     display: flex;
     flex-grow: 1;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.75em;
     color: #dcdcdc;
     font-weight: bold;
     text-shadow: 2px 2px 0 #000, 2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -419,7 +419,7 @@
     padding-right: 12px;
 }
 .soldeInput:hover{
-    box-shadow: rgb(231 238 236) 0px 0px 0px 3px;
+    box-shadow: rgb(231 238 236) 0 0 0 3px;
 }
 .tabcontent{
     box-sizing: border-box;

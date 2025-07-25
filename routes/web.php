@@ -77,3 +77,4 @@ Route::get('/suspendre/{idCompte}', [App\Http\Controllers\GestionController::cla
 
 Route::get('/download/carte/{id}', [App\Http\Controllers\CompteController::class, 'pdfCarte']);
 Route::get('/download/histo/{id}', [App\Http\Controllers\CompteController::class, 'pdfHisto']);
+
