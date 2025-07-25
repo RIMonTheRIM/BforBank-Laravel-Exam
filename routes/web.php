@@ -20,7 +20,15 @@ Route::get('/test', function () {
     return 'Laravel basic test works!';
 });
 
+Route::get('/node-paths', function () {
+    $node = trim(shell_exec('command -v node'));
+    $npm = trim(shell_exec('command -v npm'));
 
+    return response()->json([
+        'node' => $node ?: 'Node not found',
+        'npm' => $npm ?: 'NPM not found',
+    ]);
+});
 Auth::routes();
 Route::get('/health', function () {
     return response()->json(['status' => 'ok']);
