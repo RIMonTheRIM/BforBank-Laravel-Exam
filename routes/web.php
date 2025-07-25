@@ -19,7 +19,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', function () {
     return 'Laravel basic test works!';
 });
+Route::get('/find-node', function () {
+    $paths = explode(':', getenv('PATH'));
+    $result = [];
 
+    foreach ($paths as $path) {
+        $nodePath = rtrim($path, '/') . '/node';
+        $npmPath = rtrim($path, '/') . '/npm';
+
+        if (is_file($nodePath) && is_executable($nodePath)) {
+            $result['node'] = $nodePath;
+        }
+
+        if (is_file($npmPath) && is_executable($npmPath)) {
+            $result['npm'] = $npmPath;
+        }
+    }
+
+    return response()->json($result);
+});
 Route::get('/node-paths', function () {
     $info = [];
 
