@@ -90,9 +90,9 @@
             </div>
 
         </div>
-        <div class="registerBackground">
 
-        </div>
+    </div>
+    <div class="registerBackground">
     </div>
 </div>
 
