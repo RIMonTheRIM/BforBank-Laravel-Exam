@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <div class="pageContent">
     <div class="loginWrapper registerWrapper">
         <div class="registerFormWrapper">
             <div class="registerTitle">{{ __('Register') }}</div>
             <form class="registerForm" method="POST" action="{{ route('register') }}">
                 @csrf
-
                 <div class="">
                     <label for="nom" class="">{{ __('Nom') }}</label>
 
@@ -36,7 +33,6 @@
                         @enderror
                     </div>
                 </div>
-
                 <div class="">
                     <label for="email" class="">{{ __('Addresse Email') }}</label>
 
@@ -76,10 +72,6 @@
                         @enderror
                     </div>
                 </div>
-
-
-
-
                 <div class="">
                     <label for="password-confirm" class="">{{ __('Confirmer le mot de passe') }}</label>
 
@@ -87,22 +79,16 @@
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                 </div>
-
-
                 <div class="submitButton">
                     <button type="submit" class="btn btn-primary">
                         S'inscrire
                     </button>
                 </div>
-
             </form>
             <div class="submitButton switchButton">
                 <a class="btn btn-link" href="{{ route('login') }}">Vous avez déjà un compte? Se connecter</a>
             </div>
         </div>
-    </div>
-    <div class="registerBackground">
-
     </div>
 </div>
 

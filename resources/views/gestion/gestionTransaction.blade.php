@@ -8,7 +8,7 @@
     @include('sidebar')
 
     @if($user->isGestionnaire())
-        @if(isset($listeTransactions) and sizeof($listeTransactions) > 0)
+
             <div class="transaction-content">
                 <div class="tableTitle">
                     <h1>Historique des transactions</h1>
@@ -49,8 +49,8 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @if(isset($listeTransactions) and sizeof($listeTransactions) > 0)
                     @foreach($listeTransactions as $transaction)
-
                         <tr>
                             <th class="tableId">{{$transaction->id}}</th>
 
@@ -80,13 +80,13 @@
                                 <a onclick="return confirm('Voulez-vous vraiment révoquer cettre transaction ?')" class="btn btn-danger" href="/revoke/{{$transaction->id}}">Révoquer</a>
                             </td>
                         </tr>
-
                     @endforeach
+                    @endif
                     </tbody>
                 </table>
 
                 {{ $listeTransactions->links('pagination::bootstrap-5') }}
             </div>
-        @endif
+
     @endif
 @endsection
