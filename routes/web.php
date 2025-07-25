@@ -21,13 +21,25 @@ Route::get('/test', function () {
 });
 
 Route::get('/node-paths', function () {
-    $node = trim(shell_exec('which node'));
-    $npm = trim(shell_exec('which npm'));
+    $output = [];
 
-    return response()->json([
-        'node' => $node ?: 'Node not found',
-        'npm' => $npm ?: 'NPM not found',
-    ]);
+    // Check if binaries exist in common locations
+    $paths = ['/usr/bin/node', '/usr/local/bin/node', '/usr/bin/npm', '/usr/local/bin/npm'];
+    foreach ($paths as $path) {
+        $output[] = $path . ': ' . (file_exists($path) ? 'EXISTS' : 'NOT FOUND');
+    }
+
+    // Try to find with which command
+    exec('which node 2>&1', $nodeWhich);
+    exec('which npm 2>&1', $npmWhich);
+
+    $output[] = 'which node: ' . implode(', ', $nodeWhich);
+    $output[] = 'which npm: ' . implode(', ', $npmWhich);
+
+    // Check PATH
+    $output[] = 'PATH: ' . env('PATH');
+
+    return response()->json($output);
 });
 Auth::routes();
 Route::get('/health', function () {
