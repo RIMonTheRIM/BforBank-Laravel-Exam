@@ -297,6 +297,8 @@ class CompteController extends Controller
             'transactionsList' => $transactionsList
         ])->render();
         Browsershot::html($html)
+            ->setNodeBinary('/usr/bin/node')
+            ->setNpmBinary('/usr/bin/npm')
             ->showBackground()
             ->save(storage_path('app/public/pdf/example.pdf'));
         return response()->download(storage_path('app/public/pdf/example.pdf'))->deleteFileAfterSend(true);
