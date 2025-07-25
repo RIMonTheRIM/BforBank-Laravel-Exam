@@ -1,0 +1,20 @@
+[phases.setup]
+nixPkgs = [
+  "nodejs",
+  "npm",
+  "glib",
+  "nss",
+  "atk",
+  "cups",
+  "gtk3",
+  "pango",
+  "libxcomposite",
+  "libxrandr",
+  "libxdamage",
+  "libxfixes",
+  "libxext",
+  "libx11",
+  "libx11-xcb",
+  "mesa",
+  "alsa-lib"
+]
