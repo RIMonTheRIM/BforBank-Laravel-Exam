@@ -21,8 +21,8 @@ Route::get('/test', function () {
 });
 
 Route::get('/node-paths', function () {
-    $node = trim(shell_exec('command -v node'));
-    $npm = trim(shell_exec('command -v npm'));
+    $node = trim(shell_exec('which node'));
+    $npm = trim(shell_exec('which npm'));
 
     return response()->json([
         'node' => $node ?: 'Node not found',
